@@ -12,7 +12,7 @@
         name: 'App',
         data: function () {
             return {
-                title: "学习vue+nodejs+mongodb实现web开发基本的增删改查"
+                title: "学习vue+nodejs+mongodb实现web开发"
             }
         }
     }
