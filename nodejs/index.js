@@ -1,5 +1,5 @@
 const express = require('express');
-const hero = require('./router/hero')
+const store = require('./router/store')
 const mongoose = require("mongoose");
 
 const bodyParser = require("body-parser")
@@ -12,7 +12,7 @@ const bodyParser = require("body-parser")
 const app = express()
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/api',hero)
+app.use('/api',store)
 app.listen(3000,() => {
     console.log('app listening on port 3000.')
 })

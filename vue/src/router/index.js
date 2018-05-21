@@ -2,23 +2,18 @@
 
 import Vue from 'vue'
 import Router from 'vue-router'
-import List from '@/components/List'
-import Detail from '@/components/Detail'
+
+import StoreList from '@/components/StoreList'
 
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'List',
-      component: List
-    },
-    {
-      path : '/league/:name',
-      name : 'Detail',
-      component : Detail
-    },
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'StoreList',
+            component: StoreList
+        },
+    ]
 })
