@@ -18,7 +18,8 @@
   "homepage": "https://github.com/GyoungYY/nodejs_share#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "mongoose": "^5.1.0"
+    "express": "^4.16.2",
+    "mongoose": "^5.0.10",
+    "require_optional": "^1.0.1"
   }
 }
