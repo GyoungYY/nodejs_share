@@ -26,15 +26,19 @@
 
         <store-dialog v-if="storeDialogVisible" :visible="storeDialogVisible" :editId="editId"
                       @cancel="cancelDialog"></store-dialog>
+
+        <!-- <summary-list></summary-list> -->
     </div>
 </template>
 
 <script>
     import StoreDialog from './StoreDialog.vue'
+    import SummaryList from './SummaryList.vue'
 
     export default {
         components: {
-            StoreDialog
+            StoreDialog,
+            SummaryList
         },
         data() {
             return {
