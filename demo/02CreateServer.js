@@ -1,5 +1,5 @@
 // 在回调函数中，除了可以使用request对象访问请求头数据外，还能把request对象当作一个只读数据流来访问请求体数据。
-let http = require('http');
+const http = require('http');
 
 http.createServer(function (request, response) {
     var body = [];

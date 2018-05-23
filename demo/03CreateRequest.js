@@ -1,4 +1,5 @@
 // 看看客户端模式下如何工作。为了发起一个客户端HTTP请求，我们需要指定目标服务器的位置并发送请求头和请求体
+const http = require('http');
 
 var options = {
     hostname: 'www.example.com',

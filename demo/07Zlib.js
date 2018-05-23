@@ -1,4 +1,5 @@
 // zlib模块提供了数据压缩和解压的功能。当我们处理HTTP请求和响应时，可能需要用到这个模块。
+const zlib = require('zlib');
 
 // 首先我们看一个使用zlib模块压缩HTTP响应体数据的例子
 http.createServer(function (request, response) {
