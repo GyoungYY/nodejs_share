@@ -1,3 +1,8 @@
+Node中的核心模块分两类：一类是自带的核心模块，如http、tcp等，
+第二类是第三方核心模块，express就是与http对应的第三方核心模块，用于处理http请求。
+express在3.0版本中自带有很多中间件，但是在express 4.0以后，就将除static（静态文件处理）以外的其他中间件分离出来了；
+在4.0以后需要使用中间件时，就需要单独安装好相应的中间件以后调用
+
 Express 基于 Node.js 平台，快速、开放、极简的 web 开发框架。
 http://www.expressjs.com.cn/
 
