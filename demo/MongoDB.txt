@@ -1,0 +1,51 @@
+MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。
+MongoDB是一个介于关系数据库和非关系数据库(nosql)之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。
+http://www.mongodb.org.cn/
+
+创建数据库
+use DATABASE_NAME
+
+显示数据库
+show dbs  
+
+插入数据
+db.col.insert({"name":"mongodb中文网"})
+
+删除数据库
+db.dropDatabase()
+
+删除集合
+db.collection.drop()  
+
+插入文档
+db.COLLECTION_NAME.insert(document)
+db.col.save(document)  指定_id则为更新
+
+查看已有文档
+db.col.find() 
+
+更新文档
+通过update()和save()方法
+db.col.update({'title':'MongoDB 教程'},{$set:{'title':'MongoDB'}})
+
+删除文档
+db.col.remove({'title': 'MongoDB 教程'})
+db.col.remove({})  删除所有数据
+
+Nodejs中MongoDB驱动
+npm install mongodb
+var MongoClient = require('mongodb').MongoClient;
+var url = 'mongodb://localhost:27017/dbname';
+MongoClient.connect(url, function(err, db) {
+	if(err){
+		console.error(err);
+		return;
+	}else{
+		console.log("Connected correctly to server");
+		db.close();
+	}
+});
+获得collection
+添加记录
+更新记录
+
