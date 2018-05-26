@@ -4,10 +4,8 @@ const mongoose = require("mongoose");
 
 const bodyParser = require("body-parser")
 
-//这一句是连接上数据库
+//连接上数据库，myDbs是数据库的名字，不是表的名字
 var db = mongoose.connect('mongodb://localhost:27017/myDbs');
-
-//这里的myDbs是数据库的名字，不是表的名字
 
 const app = express()
 app.use(bodyParser.json());

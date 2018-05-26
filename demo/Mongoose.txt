@@ -1,0 +1,57 @@
+mongoose文档 http://www.nodeclass.com/api/mongoose.html
+mongoose中文文档 https://mongoose.shujuwajue.com/
+
+定义好模式schema
+Mongoose的一切都始于一个Schema。每个schema映射到MongoDB的集合(collection)和定义该集合(collection)中的文档的形式。
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var blogSchema = new Schema({
+  title:  String,
+  author: String,
+  body:   String,
+  comments: [{ body: String, date: Date }],
+  date: { type: Date, default: Date.now },
+  hidden: Boolean,
+  meta: {
+    votes: Number,
+    favs:  Number
+  }
+});
+
+创建一个模型
+使用我们的schema定义，我们需要将我们的blogschema转成我们可以用的模型。
+var Blog = mongoose.model('Blog', blogSchema);
+第一个参数是你的模型集合的单数名称。Mongoose会自动寻找你的模型名称的复数形式。Blog->blogs
+模型的实例是文档（documents）。文档有许多自己内置的实例方法。
+
+构建文档
+文档是我们模型的实例。创建它们，并保存到数据库是很容易的：
+Tank.create({ size: 'small' }, function (err, small) {
+  if (err) return handleError(err);
+  // saved!
+})
+
+查询
+对于Mongoosecha的查找文档很容易，它支持丰富的查询MongoDB语法。
+find，findById，findOne
+查询允许您建立一个查询使用链式语法
+Person.
+  find({
+    'name.last': 'Ghost'
+  }).
+  limit(10).
+  sort({ occupation: -1 }).
+  exec(callback);
+
+更新
+save，update，findByIdAndUpdate（返回文档）
+
+
+
+
+
+
+
+
