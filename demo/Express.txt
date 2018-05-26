@@ -1,0 +1,84 @@
+Express 基于 Node.js 平台，快速、开放、极简的 web 开发框架。
+http://www.expressjs.com.cn/
+
+安装
+npm install express --save
+
+Hello World实例
+启动一个服务并监听从 3000 端口进入的所有连接请求
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
+
+启动
+node app.js
+
+Express应用生成器
+npm install express-generator -g
+express myapp
+
+路由
+路由（Routing）是由一个 URI（或者叫路径）和一个特定的 HTTP 方法（GET、POST 等）组成的
+路由的定义由如下结构组成：app.METHOD(PATH, HANDLER)。其中，app 是一个 express 实例；
+METHOD 是某个 HTTP 请求方式中的一个；PATH 是服务器端的路径；HANDLER 是当路由匹配到时需要执行的函数。
+// 对网站首页的访问返回 "Hello World!" 字样
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+// 网站首页接受 POST 请求
+app.post('/', function (req, res) {
+  res.send('Got a POST request');
+});
+
+// /user 节点接受 PUT 请求
+app.put('/user', function (req, res) {
+  res.send('Got a PUT request at /user');
+});
+
+// /user 节点接受 DELETE 请求
+app.delete('/user', function (req, res) {
+  res.send('Got a DELETE request at /user');
+});
+
+利用 Express 托管静态文件
+通过 Express 内置的 express.static 可以方便地托管静态文件，例如图片、CSS、JavaScript 文件等。
+将静态资源文件所在的目录作为参数传递给 express.static 中间件就可以提供静态资源文件的访问了。
+例如，假设在 public 目录放置了图片、CSS 和 JavaScript 文件，你就可以：app.use(express.static('public'));    
+
+在 Express 中使用模板引擎
+npm install jade --save
+views, 放模板文件的目录，比如： app.set('views', './views')
+view engine, 模板引擎，比如： app.set('view engine', 'jade')
+index.jade文件
+html
+  head
+    title!= title
+  body
+    h1!= message
+
+app.get('/', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!'});
+});
+
+使用中间件
+Express 是一个自身功能极简，完全是由路由和中间件构成一个的 web 开发框架：从本质上来说，一个 Express 应用就是在调用各种中间件。
+应用级中间件：app.use()、app.METHOD()
+路由级中间件： express.Router()
+内置中间件： express.static
+第三方中间件：cookie-parser、body-parser
+
+
+
+
+
