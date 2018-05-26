@@ -1,6 +1,9 @@
 mongoose文档 http://www.nodeclass.com/api/mongoose.html
 mongoose中文文档 https://mongoose.shujuwajue.com/
 
+安装
+npm install mongoose
+
 定义好模式schema
 Mongoose的一切都始于一个Schema。每个schema映射到MongoDB的集合(collection)和定义该集合(collection)中的文档的形式。
 
