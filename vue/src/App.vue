@@ -6,13 +6,11 @@
 </template>
 
 <script>
-
-
     export default {
         name: 'App',
         data: function () {
             return {
-                title: "学习vue+nodejs+mongodb实现web开发"
+                title: "学习vue+nodejs+mongodb实现web开发(vue+express+mongoose)"
             }
         }
     }
